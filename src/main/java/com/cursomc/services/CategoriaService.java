@@ -1,0 +1,32 @@
+package com.cursomc.services;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cursomc.dominio.Categoria;
+import com.cursomc.repositories.CategoriaRepository;
+import com.cursomc.services.exceptions.ObjectNotFoundException;
+
+@Service
+public class CategoriaService {
+	
+	@Autowired
+	private CategoriaRepository repo;
+	
+	public Categoria buscar(Integer id) {
+		
+		//Spring Boot 1.x
+//		Categoria obj = repo.getOne(id);
+//		return obj;
+		
+		//Spring Boot 2.
+		Optional<Categoria> obj = repo.findById(id);
+			
+		return obj.orElseThrow(() -> new ObjectNotFoundException(
+				"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
+		
+	}
+	
+}
