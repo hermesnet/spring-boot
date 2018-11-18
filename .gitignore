@@ -1,0 +1,31 @@
+# Eclipse
+.springBeans
+.classpath
+.project
+.settings/
+.factorypath
+/.apt_generated/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+etl.iml
+# Mac
+.DS_Store
+
+# Maven
+log/
+
+# ElasticSearch embedded 
+/target/
+*.*~
+bin/
+
+dump.rdb
+
+
+__pycache__/
+
+
+scripts/python/personify-weights/output/
