@@ -16,13 +16,13 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 import com.cursomc.resources.utils.JWTUtil;
 
-public class JWTAutorizationFilter extends BasicAuthenticationFilter{
+public class JWTAuthorizationFilter extends BasicAuthenticationFilter{
 
 	private JWTUtil jwtUtil;
 	
 	private UserDetailsService userDetailsService;
 	
-	public JWTAutorizationFilter(AuthenticationManager authenticationManager, JWTUtil jwtUtil, UserDetailsService userDetailService) {
+	public JWTAuthorizationFilter(AuthenticationManager authenticationManager, JWTUtil jwtUtil, UserDetailsService userDetailService) {
 		super(authenticationManager);
 		this.jwtUtil = jwtUtil;
 		this.userDetailsService = userDetailService;
